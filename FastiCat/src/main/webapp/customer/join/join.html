@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 반응형 웹 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../resources/css/common/header.css">
+<link rel="stylesheet" href="../../resources/css/common/footer.css">
+<link rel="stylesheet" href="../../resources/css/customer/join.css">
+<link rel="stylesheet" href="../../resources/css/customer/search.css">
+
+<script src="https://kit.fontawesome.com/e99c5d1543.js" crossorigin="anonymous"></script>
+<script type="../../resources/js/customer/main.js" defer></script>
+<script type="text/javascript">
+   function inputChk() {
+      // alert("정규식");      
+      // 이름 : 입력시작부터 입력끝까지 [한글 2~5글자]까지 일치하는 패턴으로 정규표현 객체를 생성
+       // 주의 : 정규식에 공백이 있으면 안됨
+       let reg_name = /^[가-힣]{2,5}$/;
+       
+       // 비밀번호 : [숫자와 문자 포함 형태의 6~12자리] 이내의 암호 정규식
+         let reg_password = /^[A-Za-z0-9]{6,12}$/;
+      
+      // 핸드폰 : 첫번호는 010,070,080중 하나로 시작하고, 다음 번호는 3~4개까지 오고,
+      //         마지막 번호는 숫자 4개가 일치하는 패턴으로 정규표현 객체를 생성
+      let reg_hp = /^(010|070|080)\d{3,4}\d{4}$/; // d:digit 자리수
+      
+      /* 
+      1. ^ : 문장의 처음부터 시작한다.
+      2. [0-9a-zA-Z_-]+ : 숫자 또는 알파벳 소문자 대문자 또는 밑줄(_), 하이픈(-)이 1개이상(+)이상 와야한다.
+      3. ([0-9a-zA-Z_-]+) :  2에서의 형식을 한 묶음으로 한다. 시작과 끝으로 한다.
+      4. @ : 골뱅이가 들어가고
+      5. \.: . 이 들어간다.
+      6. {1,2} : 앞의 식이 1개 또는 2개가 연속으로 올 수 있다.
+      7. $ : 문장끝
+      8. i : 대소문자를 구분하지 않는다.
+      9. * : 0또는 그이상의 문자가 연속될 수 있음을 의미
+      */
+      // email2가 없으면 NG
+      let reg_email = /^[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/i;
+      
+      // 이름 필수체크
+      if(!document.signIn.userName.value) {
+         alert("이름을 입력하세요");
+         document.signIn.userName.focus();
+         return false;
+      } else if(!reg_name.test(document.signIn.userName.value)) {
+         alert("이름 입력(한글2~5자)!!");
+         document.signIn.userName.value = "";
+         document.signIn.userName.focus();
+         return false;
+      }
+      
+      if(!document.signIn.userPWD.value) {
+         alert("비밀번호를 입력하세요");
+         document.signIn.userPWD.focus();
+         return false;
+      } else if(!reg_password.test(document.signIn.userPWD.value)) {
+         alert("비밀번호 입력(숫자와 문자포함 6~12자리)!!");
+         document.signIn.userPWD.value = "";
+         document.signIn.userPWD.focus();
+         return false;
+      }
+      
+      if(!document.signIn.userHp.value) {
+         alert("핸드폰번호를 입력하세요");
+         document.signIn.userHp.focus();
+         return false;
+      } else if(!reg_hp.test(document.signIn.userHp.value)) {
+         alert("핸드폰번호 입력('-' 없이')!!");
+         document.signIn.userHp.value = "";
+         document.signIn.userHp.focus();
+         return false;
+      }
+      
+      let email = document.signIn.userEmail1.value+"@"+document.signIn.userEmail2.value;
+      
+      if(!document.signIn.userEmail1.value||!document.signIn.userEmail2.value) {
+         alert("이메일을 입력하세요");
+         document.signIn.userEmail1.focus();
+         return false;
+      } else if(!reg_email.test(email)) {
+         alert("이메일형식이 아닙니다.");
+         document.signIn.userEmail1.value = "";
+         document.signIn.userEmail2.value = "";
+         document.signIn.userEmail1.focus();
+         return false;
+      }
+   }
+   
+   function selectEmailChk() {
+      // select 박스에서 이메일 주소를 선택시 해당값이 들어가도록 한다.
+      if(document.signIn.userEmail3.value == 0){
+         document.signIn.userEmail2.value = "";
+         document.signIn.userEmail2.focus();
+         return false;
+      } else {
+         document.signIn.userEmail2.value = document.signIn.userEmail3.value;
+      }
+      
+   }
+</script>
+<title>회원가입</title>
+
+
+</head>
+<body>
+<!-- header 시작 -->
+ <div class="wrap">
+      <nav class="navbar">
+         <ul class="navbar_menu">
+            <a href="../../common/main.html"><img src="../../resources/images/festicat.PNG" width="155px" height="50px" id="festicat" ></a>
+            <li><a href="#">국내공연</a></li>
+            <li><a href="#">국내 페스티벌</a></li>
+            <li><a href="#">장르 별 인기순위</a></li>
+            <li><a href="#">공연후기</a></li>
+            <li><a href="#">자유게시판</a></li>
+            <li><a href="#">공지사항 게시판</a></li>
+         </ul>
+         
+         <ul class="navbar_icons">
+            <li><a href="main.html"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="main.html"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="../../customer/login/login.html">LOGIN</a></li>
+      		<!-- 나중에 검색값 넘겨야 함 -->
+<!--             <form id="searchForm" class="d-flex" role="search" onsubmit="return handleSearch()"> -->
+			<input id="searchInput" class="inputButton" type="search" placeholder="Search" aria-label="Search">
+			<input class="inputButton" type="button" value="search" onclick="window.location='../search/search.html'">
+<!-- 			</form> -->
+            <li><a href="../customer/mypage/myPage.html"><i class="fa-solid fa-user"></i></a></li> 
+         </ul>
+      
+      	<!-- 반응형 웹 - (1). 햄버거 아이콘 fontawesome - free - bars -->
+      	<a href="#" class="navbar_toggleBtn">
+      		<i class="fa-solid fa-bars"></i>
+      	</a>
+      
+      </nav>
+      <!-- header 끝 -->
+      
+      <!-- 컨텐츠 시작 -->
+      <div id="container">
+      	<div id="contents">
+      		<!-- 상단 중앙 1 시작 -->
+      		<div id="section1">
+      			<h1 align="center"> 회원가입 </h1>
+      		</div>
+      		
+      		<!-- 상단 중앙 2 시작 -->
+      		<div id="section2">
+      			<div class="s2_inner">
+      				<div class="join">
+      					<form name="joinform" action="joinAction.html" method="post">
+      						<table>
+								<tr>
+									<th class="user_id"> 아이디 </th>
+									<td>
+										<input type="text" class="joinInput" name="userid" size="20" placeholder="공백없이 20자 이내로 입력" required autofocus>
+									</td>
+								</tr>
+								
+					            <tr>
+					               <th align="right"><label for="label_pwd"> 비밀번호 : </label></th>
+					               <td><input type="password" id="label_pwd" name="userPWD" size="30" placeholder="문자와 숫자 포함 6-12자리 입력"></td>            
+					            </tr>		
+								
+					            <tr>
+					               <th align="right"><label for="label_rePwd"> 비밀번호 확인 : </label></th>
+					               <td><input type="password" id="label_rePwd" name="userrePWD" size="30" placeholder="문자와 숫자 포함 6-12자리 입력"></td>            
+					            </tr>			
+								
+					            <tr>
+					               <th align="right"><label for="nicknameChk"> 이름 : </label></th>
+					               <td><input type="text" id="nicknameChk" name="usernickName" size="20" placeholder="한글로 입력"></td>            
+					            </tr>
+								
+								<tr>
+									<th > 생년월일 </th>
+									<td>
+										<input type="date" class="joinInput2" name="birthday" size="8" placeholder="-없이 생년월일 8자리" required>
+									</td>
+								</tr>								
+								
+								<tr>
+									<th> 주소 </th>
+									<td>
+										<input type="text" class="joinInput2" name="address" size="60" placeholder="주소 작성" required>
+									</td>
+								</tr>								
+						
+					            <tr>
+					               <th align="right"><label for="hpChk"> 핸드폰 : </label></th>
+					               <td><input type="text" id="hpChk" name="userHp" size="3"> -             
+					               <input type="text" id="hpChk" name="userHp" size="4"> -             
+					               <input type="text" id="hpChk" name="userHp" size="4">       </td>     
+					            </tr>								
+
+						 		<tr>
+					               <th align="right"><label for="emailChk"> 이메일 : </label></th>
+					               <td>
+					                  <input type="text" id="emailChk" name="userEmail1" size="20" style="width:100px">
+					                  @
+					                  <input type="text" id="emailChk1" name="userEmail2" size="20" style="width:100px">
+					                  <select name="userEmail3" style="width:100px" onChange="selectEmailChk()">
+					                     <option value="0">직접입력</option>
+					                     <option value="naver.com">네이버</option>
+					                     <option value="gmail.com">구글</option>
+					                     <option value="daum.net">다음</option>
+					                     <option value="natel.com">네이트</option>
+					                  </select>
+					               </td>            
+					            </tr>								
+							
+								<tr>
+									<td colspan="2" style="border-bottom: none">
+										<br>
+										<div align="right">
+											<input class="inputButton" type="submit" value="회원가입">
+											<input class="inputButton" type="reset" value="초기화">
+											<input class="inputButton" type="button" value="가입취소" onclick="window.location='../../common/main.html'">
+										</div>
+									</td>
+								</tr>
+							
+																																																			
+      						</table>
+      					</form>
+      				</div>
+      			</div>
+      		</div>
+ 		</div>
+      </div>
+      <!-- 컨텐츠 끝 -->
+      
+      
+      <!-- footer 시작 -->
+      <div class="footer_info">
+	      	<div class="footer_link">
+	      		<ui>
+	      			<li><a href="#">회사소개</a></li>
+	      			<li><a href="#">이용약관</a></li>
+	      			<li><a href="#">개인정보 처리방침</a></li>
+	      		</ui>
+	      	</div>
+	      	
+		 	<div class="footer_info_customer">
+		 		<h3>고객센터 02-1234-5678</h3>
+		 		<p>
+		 			평일 및 주말 10:00 ~ 17:00 (공휴일 휴무)<br>
+		 			점심시간 12:00 ~ 13:00 
+		 		</p>
+	      	</div>
+	      	
+	      	
+	 		<div class="footer_info_company">
+		 		<span>법인명 : FastiCat</span>
+				<span>대표 : 김준혁 </span>
+				<span>사업자번호 : 123-7890</span>
+				<span>사업자 소재지 : 서울시 마포구 신수동</span>
+	      	</div>
+	      	
+      </div>
+      <!-- footer 끝 -->
+      
+   </div>
+   
+</body>
+</html>

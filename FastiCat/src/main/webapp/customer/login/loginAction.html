@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 반응형 웹 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../resources/css/common/header.css">
+<link rel="stylesheet" href="../../resources/css/common/footer.css">
+<link rel="stylesheet" href="../../resources/css/customer/login.css">
+
+<script src="https://kit.fontawesome.com/e99c5d1543.js" crossorigin="anonymous"></script>
+<script type="../../resources/js/customer/main.js" defer></script>
+
+<title>로그인 페이지</title>
+
+
+</head>
+<body>
+
+<!-- header 시작 -->
+ <div class="wrap">
+      <nav class="navbar">
+         <ul class="navbar_menu">
+            <a href="../../common/main.html"><img src="../../resources/images/festicat.PNG" width="155px" height="50px" id="festicat" ></a>
+            <li><a href="#">국내공연</a></li>
+            <li><a href="#">국내 페스티벌</a></li>
+            <li><a href="#">장르 별 인기순위</a></li>
+            <li><a href="#">공연후기</a></li>
+            <li><a href="#">자유게시판</a></li>
+            <li><a href="#">공지사항 게시판</a></li>
+         </ul>
+         
+         <ul class="navbar_icons">
+            <li><a href="main.html"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="main.html"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="../../customer/login/login.html">LOGIN</a></li>
+      		<!-- 나중에 검색값 넘겨야 함 -->
+<!--             <form id="searchForm" class="d-flex" role="search" onsubmit="return handleSearch()"> -->
+			<input id="searchInput" class="inputButton" type="search" placeholder="Search" aria-label="Search">
+			<input class="inputButton" type="button" value="search" onclick="window.location='../search/search.html'">
+<!-- 			</form> -->
+            <li><a href="../customer/mypage/myPage.html"><i class="fa-solid fa-user"></i></a></li> 
+         </ul>
+      
+      	<!-- 반응형 웹 - (1). 햄버거 아이콘 fontawesome - free - bars -->
+      	<a href="#" class="navbar_toggleBtn">
+      		<i class="fa-solid fa-bars"></i>
+      	</a>
+      
+      </nav>
+      <!-- header 끝 -->
+      
+      <!-- 컨텐츠 시작 -->
+	  <script type="text/javascript">
+		alert("로그인 성공!!");
+  		window.location='../../common/main.html';
+	  </script>
+      <!-- 컨텐츠 끝 -->
+      
+      
+      <!-- footer 시작 -->
+      <div class="footer_info">
+	      	<div class="footer_link">
+	      		<ui>
+	      			<li><a href="#">회사소개</a></li>
+	      			<li><a href="#">이용약관</a></li>
+	      			<li><a href="#">개인정보 처리방침</a></li>
+	      		</ui>
+	      	</div>
+	      	
+		 	<div class="footer_info_customer">
+		 		<h3>고객센터 02-1234-5678</h3>
+		 		<p>
+		 			평일 및 주말 10:00 ~ 17:00 (공휴일 휴무)<br>
+		 			점심시간 12:00 ~ 13:00 
+		 		</p>
+	      	</div>
+	      	
+	      	
+	 		<div class="footer_info_company">
+		 		<span>법인명 : ICTcopp</span>
+				<span>대표 : 김조원</span>
+				<span>사업자번호 : 123-7890</span>
+				<span>사업자 소재지 : 서울시 마포구 신수동</span>
+	      	</div>
+	      	
+      </div>
+      <!-- footer 끝 -->
+      
+   </div>
+   
+</body>
+</html>

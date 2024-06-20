@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>free_writing</title>
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/normal_board.css/writing.css">
+    <script src="https://kit.fontawesome.com/e3f7bcf3d6.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../resources/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" defer>
+        
+        $(function() {
+            $(".btn_upload").css({"margin-left":"30px"});
+        });
+       
+    </script>
+</head>
+<body>
+    <!-- header 시작 -->
+    <header>
+        <h3>로고</h3>  <h6 align="right">로그인</h6>
+
+        메뉴바
+        <br>
+        <hr>
+        <br>
+    </header>
+    <!-- header 끝 -->
+
+    <!-- 로그인 시 게시글 작성가능 -->
+    <!-- 컨텐츠 시작 -->
+    <h3>자유게시판 작성하기</h3>
+    <!-- 드롭다운 => 카테고리 공연 ,페스티벌-->
+    <div class="outline">
+        <form id="myForm" method="post">
+                <table class="container">
+                    <tr>
+                        <td colspan="2"><input class="title" type="text" name="title" id="title" size="30px" placeholder="제목을 입력하세요"></td>   
+                    </tr>
+
+                    <tr>
+                        <td> 
+                            <div class="div_medium">
+                                <label class="label_file" for="file">
+                                    <div class="btn_upload">파일 업로드</div>                              
+                                    <input type="file" class="input_file" id="file" multiple>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><hr class="hr_between"></td>
+                    </tr>
+
+                    <tr>
+                        <td><textarea name="content" id="content" cols="50" rows="15" placeholder="내용을 입력하세요"></textarea></td>
+                    </tr>
+                </table>
+                    <div class="input_btn">
+                        <input class="upload" type="submit" name="upload" value="작성완료">
+                        <input class="reset" type="reset" name="reset" value="초기화">
+                        <input class="cancel" type="reset" name="cancel" value="작성취소" onclick="history.back()">
+                    </div>         <!--action이 안됨-->
+        </form>
+    </div>
+
+     <!-- 컨텐츠 끝 -->
+
+     <!-- footer 시작 -->
+     <br>
+     <footer style="background: gray;">
+         <hr>
+         <h4>festicat 정보</h4>
+         <br>
+         <hr>
+         <br>
+     </footer>
+     <!-- footer 끝 -->
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 반응형 웹 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../resources/css/common/header.css">
+<link rel="stylesheet" href="../../resources/css/common/footer.css">
+<link rel="stylesheet" href="../../resources/css/customer/login.css">
+<link rel="stylesheet" href="../../resources/css/customer/search.css">
+
+<script src="https://kit.fontawesome.com/e99c5d1543.js" crossorigin="anonymous"></script>
+<script type="../../resources/js/customer/main.js" defer></script>
+<script>
+
+function handleSearch() {
+    var searchInput = document.getElementById('searchInput').value.trim();
+    
+    if (searchInput === '') {
+        return false; // 검색어가 비어 있으면 이벤트 취소
+    } else {
+        // 검색어가 있으면 search.html로 이동
+        window.location.href = 'search.html?q=' + encodeURIComponent(searchInput);
+        return false; // 이벤트 취소
+    }
+}
+</script>
+<title>검색 페이지</title>
+
+
+</head>
+<body>
+
+<!-- header 시작 -->
+ <div class="wrap">
+      <nav class="navbar">
+         <ul class="navbar_menu">
+            <a href="../../common/main.html"><img src="../../resources/images/festicat.PNG" width="155px" height="50px" id="festicat" ></a>
+            <li><a href="#">국내공연</a></li>
+            <li><a href="#">국내 페스티벌</a></li>
+            <li><a href="#">장르 별 인기순위</a></li>
+            <li><a href="#">공연후기</a></li>
+            <li><a href="#">자유게시판</a></li>
+            <li><a href="#">공지사항 게시판</a></li>
+         </ul>
+         
+         <ul class="navbar_icons">
+            <li><a href="main.html"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="main.html"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="../../customer/login/login.html">LOGIN</a></li>
+      		<!-- 나중에 검색값 넘겨야 함 -->
+<!--             <form id="searchForm" class="d-flex" role="search" onsubmit="return handleSearch()"> -->
+			<input id="searchInput" class="inputButton" type="search" placeholder="Search" aria-label="Search">
+			<input class="inputButton" type="button" value="search" onclick="window.location='search.html'">
+<!-- 			</form> -->
+            <li><a href="../customer/mypage/myPage.html"><i class="fa-solid fa-user"></i></a></li> 
+         </ul>
+      
+      	<!-- 반응형 웹 - (1). 햄버거 아이콘 fontawesome - free - bars -->
+      	<a href="#" class="navbar_toggleBtn">
+      		<i class="fa-solid fa-bars"></i>
+      	</a>
+      
+      </nav>
+      <!-- header 끝 -->
+      
+      
+      <!-- 컨텐츠 시작 -->
+      <div id="container">
+      	<div id="contents">
+      		<!-- 상단 중앙 1 시작 -->
+      		<div id="section1">
+      			<h1 align="center"> 통합검색 </h1>
+      		</div>
+      		
+      		<!-- 상단 중앙 2 시작 -->
+      		<div id="section2">
+      			<div class="s2_inner">
+      				<div class="join">
+      						<table>
+								 <thead>
+								    <tr class="searchMain">
+								      <th scope="col">게시판</th>
+								      <th scope="col">제목</th>
+								      <th scope="col">작성자</th>
+								      <th scope="col">조회수</th>
+								      <th scope="col">작성일</th>
+								    </tr>
+								  </thead>
+								  <tbody class="table-group-divider">
+								    <tr>
+								      <td class="row">공연후기 > </th>
+								      <td>월디페 진짜 짱...ㅜ</td>
+								      <td>아이유</td>
+								      <td>124</td>
+								      <td>2024.06.19</td>
+								    </tr>
+								    <tr>
+								      <td class="row">자유게시판 > </th>
+								      <td>공연추천좀</td>
+								      <td>홍길동</td>
+								      <td>62</td>
+								      <td>2024.06.05</td>
+								    </tr>
+								    <tr>
+								      <td class="row">공연후기 > </th>
+								      <td >비만 안왔어도.</td>
+								      <td>김태희</td>
+								      <td>97</td>
+								      <td>2024.06.04</td>
+								    </tr>
+								    
+								    <tr>
+								      <td class="row">공지사항게시판 > </th>
+								      <td > JAVA 페스티발 우천 취소 안내.</td>
+								      <td>운영자</td>
+								      <td>241</td>
+								      <td>2024.06.03</td>
+								    </tr>
+								    
+								    <tr class="searchSub">
+								      <td class="row">자유게시판 > </th>
+								      <td >심심해용</td>
+								      <td>심심이</td>
+								      <td>67</td>
+								      <td>2024.05.28</td>
+								    </tr>
+								    
+								    <tr>
+								      <td class="row">공연후기 > </th>
+								      <td >배우들 연기가 짱!</td>
+								      <td>유재석</td>
+								      <td>131</td>
+								      <td>2024.05.17</td>
+								    </tr>
+								    
+								    <tr>
+								      <td class="row">자유게시판 > </th>
+								      <td >암표 사지마세요</td>
+								      <td>임꺽정</td>
+								      <td>95</td>
+								      <td>2024.05.04</td>
+								    </tr>
+								    
+																    
+								  </tbody>
+								
+								
+								<!-- 드롭다운 + 검색 창 시작 -->			
+								<tr>
+									<td colspan="2" style="border-bottom: none">
+										<br>
+										<div align="right" id="searchfooter">
+											  <select name="languages" id="lang">
+											    <option value="c#">공연</option>
+											    <option value="C++">공연후기</option>
+											    <option value="erlang">자유게시판</option>
+											    <option value="erlang">공지사항</option>
+											    <option value="erlang">이벤트</option>
+											  </select>
+								      		<!-- 나중에 검색값 넘겨야 함 -->
+								<!--             <form id="searchForm" class="d-flex" role="search" onsubmit="return handleSearch()"> -->
+											<input id="searchInput" class="inputButton" type="search" placeholder="Search" aria-label="Search">
+											<input class="inputButton" type="button" value="search" onclick="window.location='search.html'">
+										</div>
+									</td>
+								</tr>
+								<!-- 드롭다운 + 검색 창 끝 -->			
+
+							
+      						</table>
+      				</div>
+      			</div>
+      		</div>
+ 		</div>
+      </div>
+      <!-- 컨텐츠 끝 -->
+      
+      
+      <!-- footer 시작 -->
+      <div class="footer_info">
+	      	<div class="footer_link">
+	      		<ui>
+	      			<li><a href="#">회사소개</a></li>
+	      			<li><a href="#">이용약관</a></li>
+	      			<li><a href="#">개인정보 처리방침</a></li>
+	      		</ui>
+	      	</div>
+	      	
+		 	<div class="footer_info_customer">
+		 		<h3>고객센터 02-1234-5678</h3>
+		 		<p>
+		 			평일 및 주말 10:00 ~ 17:00 (공휴일 휴무)<br>
+		 			점심시간 12:00 ~ 13:00 
+		 		</p>
+	      	</div>
+	      	
+	      	
+	 		<div class="footer_info_company">
+		 		<span>법인명 : FastiCat</span>
+				<span>대표 : 김준혁 </span>
+				<span>사업자번호 : 123-7890</span>
+				<span>사업자 소재지 : 서울시 마포구 신수동</span>
+	      	</div>
+	      	
+      </div>
+      <!-- footer 끝 -->
+      
+   </div>
+   
+</body>
+</html>

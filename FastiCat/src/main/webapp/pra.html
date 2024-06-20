@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 게시판</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>공지사항 게시판</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>일자</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>공지사항 제목 1</td>
+                    <td>2024-06-18</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>공지사항 제목 2</td>
+                    <td>2024-06-17</td>
+                    <td>456</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>공지사항 제목 3</td>
+                    <td>2024-06-16</td>
+                    <td>789</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

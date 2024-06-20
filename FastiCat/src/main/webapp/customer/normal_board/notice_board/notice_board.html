@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 게시판</title>
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/normal_board.css/notice_board.css"> 
+    <script type="text/javascript" src="../../../resources/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        // 상세페이지 이동
+        $(function() {
+            $('.link_notice_content').each(function() {
+                if (!$(this).attr('href')) {
+                    $(this).attr('href', 'notice_content.html');
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <a href="../review_board/review_board1.html">공연/페스티벌 게시판</a>
+    <a href="../free_board/free_board1.html">자유게시판</a>
+    <h3>공지사항 게시판</h3>
+
+    <div class="t_container">
+        <table>
+            <thead class="t_head">
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>일자</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+
+            <tbody class="t_body">
+                
+                <tr>
+                        <td>10</td>
+                        <td><a class="link_notice_content">공지사항 제목 10</a></td>
+                        <td>2024-06-18</td>
+                        <td>123</td>
+                </tr>
+               
+                <tr>
+                    <td>9</td>
+                    <td><a class="link_notice_content">공지사항 제목 9</a></td>
+                    <td>2024-06-16</td>
+                    <td>456</td>
+                </tr>
+    
+                <tr>
+                    <td>8</td>
+                    <td><a class="link_notice_content">공지사항 제목 8</a></td>
+                    <td>2024-06-14</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a class="link_notice_content">공지사항 제목 7</a></td>
+                    <td>2024-06-12</td>
+                    <td>456</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a class="link_notice_content">공지사항 제목 6</a></td>
+                    <td>2024-06-11</td>
+                    <td>789</td>
+                </tr>
+    
+                <tr>
+                    <td>5</td>
+                    <td><a class="link_notice_content">공지사항 제목 5</a></td>
+                    <td>2024-06-05</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a class="link_notice_content">공지사항 제목 4</a></td>
+                    <td>2024-05-25</td>
+                    <td>456</td>
+                </tr>
+    
+                <tr>
+                    <td>3</td>
+                    <td><a class="link_notice_content">공지사항 제목 3</a></td>
+                    <td>2024-05-18</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a class="link_notice_content">공지사항 제목 2</a></td>
+                    <td>2024-05-17</td>
+                    <td>456</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><a class="link_notice_content">공지사항 제목 1</a></td>
+                    <td>2024-05-16</td>
+                    <td>789</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="btnNum" align="center">
+        <button onclick="next(0)"><</button>
+        <button onclick="next(0)">1</button>
+        <button onclick="next(1)">2</button>
+        <button onclick="next(1)">></button>
+    </div>
+</body>
+</html>
